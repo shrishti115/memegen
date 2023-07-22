@@ -18,7 +18,7 @@ import {useState} from "react";
 
 
     })}
-    const[memes,setMemes]=useState("");
+    const[memes,setMemes]=useState("http://i.imgflip.com/1bij.jpg");
 
     const getMemeImage=()=>{
     const memesArray=memesData.data.memes;
