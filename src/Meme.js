@@ -6,6 +6,7 @@ import {useState} from "react";
     const [text,setText]=useState({
         topText:"",
         bottomText:""
+        
     })
 
 
@@ -20,13 +21,20 @@ import {useState} from "react";
     })}
     const[memes,setMemes]=useState("http://i.imgflip.com/1bij.jpg");
 
-    const getMemeImage=()=>{
+    const getMemeImage=(event)=>{
     const memesArray=memesData.data.memes;
 
     const randomMeme=[Math.floor(Math.random()*memesArray.length)];
     const {url}=memesArray[randomMeme];
 
     setMemes(url);
+
+    setText((prevValue)=>{
+        return{
+            topText:"",
+            bottomText:""
+        }}
+    )
     }
 
     return (
